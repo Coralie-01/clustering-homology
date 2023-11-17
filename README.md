@@ -71,6 +71,11 @@ source env/bin/activate
 pip install -e .
 ```
 
+## Launch the model
+```bash
+python main.py
+```
+
 
 
 ## Project Organization 
