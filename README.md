@@ -1,7 +1,9 @@
 bin702
 ==============================
 
-A short description of the project.
+Ce projet est fait dans le cadre du cours BIN-702. 
+On peut voir l'organisation du projet ci-dessous.
+
 
 Project Organization
 ------------
@@ -53,5 +55,63 @@ Project Organization
 
 
 --------
+
+## Initialisation
+
+### Docker
+
+1. Installer docker
+
+Si docker n'est pas déjà installé, veuillez faire les commandes suivantes
+```bash
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null    
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+2. Build and run docker
+
+```bash
+chmod +x ./buildandrunDocker.sh
+./buildandrunDocker.sh
+```
+
+## Comment utiliser le projet
+
+1. Simulation des données
+
+```bash
+make data
+```
+
+2. Choisir une matrice de similarité
+
+```bash
+make blosum
+```
+
+ou bien 
+
+(make hmm ne fonctionne pour l'instant pas)
+
+```bash
+make hmm
+```
+
+Si jamais on veut nettoyer les données pour en refaire des nouvelles
+
+```bash
+make clear
+```
+
+Pour la suite des solutions, veuillez vous référer aux notebooks DataExploration MCL et ClusteringSpectral.
+
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>

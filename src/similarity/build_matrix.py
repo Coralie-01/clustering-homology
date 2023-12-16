@@ -28,18 +28,15 @@ def build_matrix(sequences):
                 matrix[i,j] = score(sequences[i],sequences[j])
     return matrix
 
-
-
 def main():
     df_seq = pd.read_csv('data/processed/sequences.csv')['Sequence']
     spinner = Halo(text='Building similarity matrix', spinner='dots').start()
     similarity_matrix = build_matrix(df_seq)
-    similarity_matrix = np.load('data/processed/similarity_matrix.npy')
+    #similarity_matrix = np.load('data/processed/similarity_matrix.npy')
     spinner.succeed('Similarity matrix built')
     spinner = Halo(text='Saving similarity matrix', spinner='dots').start()
     np.save('data/processed/similarity_matrix.npy',similarity_matrix)
     spinner.succeed('Similarity matrix saved')
-
 
 
 if __name__ == '__main__':
