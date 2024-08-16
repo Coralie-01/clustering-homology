@@ -1,8 +1,7 @@
-bin702
+Homologous gene family clustering
 ==============================
 
-Ce projet est fait dans le cadre du cours BIN-702. 
-On peut voir l'organisation du projet ci-dessous.
+This project was made as a final session project in the course of BIN-702: Algorithm for bio-informatics. 
 
 
 Project Organization
@@ -83,35 +82,33 @@ chmod +x ./buildandrunDocker.sh
 ./buildandrunDocker.sh
 ```
 
-## Comment utiliser le projet
+## How to use the project
 
-1. Simulation des données
+1. Simulate the data
 
 ```bash
 make data
 ```
 
-2. Choisir une matrice de similarité
+2. Choose a similarity matrix
 
 ```bash
 make blosum
 ```
 
-ou bien 
-
-(make hmm ne fonctionne pour l'instant pas)
+or
 
 ```bash
 make hmm
 ```
 
-Si jamais on veut nettoyer les données pour en refaire des nouvelles
+To clear data if you need to make new ones
 
 ```bash
 make clear
 ```
 
-Pour la suite des solutions, veuillez vous référer aux notebooks DataExploration MCL et ClusteringSpectral.
+More details in the notebooks DataExploration MCL and ClusteringSpectral.
 
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
